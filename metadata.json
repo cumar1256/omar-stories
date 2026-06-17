@@ -1,0 +1,6 @@
+{
+  "name": "Omar Stories",
+  "description": "An interactive sanctuary for stories with a premium reading interface, personalized profiles, story archives, and search.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
