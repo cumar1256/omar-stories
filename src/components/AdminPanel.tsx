@@ -378,7 +378,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     try {
       const response = await fetch('/api/admin/story/delete-all', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
       });
 
       if (response.ok) {

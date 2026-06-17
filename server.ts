@@ -462,8 +462,14 @@ app.post('/api/admin/story/delete', (req, res) => {
 
 // API endpoint to purge all stories from database
 app.post('/api/admin/story/delete-all', (req, res) => {
-  saveSharedStories([]);
-  res.json({ success: true });
+  try {
+    console.log('Admin command: Purging all shared stories...');
+    saveSharedStories([]);
+    res.json({ success: true });
+  } catch (err: any) {
+    console.error('Fatal: Failed to purge all stories:', err);
+    res.status(500).json({ error: err.message || 'Underlying storage write error during purge.' });
+  }
 });
 
 // API endpoints for broadcast messages
